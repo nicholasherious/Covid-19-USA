@@ -1,8 +1,18 @@
 body {
   margin: 0;
+  background-color: rgb(255, 255, 255);
 }
 
 .site-card-border-less-wrapper {
-  background: #ececec;
+  background: #dae8f5;
   padding: 30px;
+}
+
+.example {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 30px 50px;
+  margin: 20px 0;
 }
