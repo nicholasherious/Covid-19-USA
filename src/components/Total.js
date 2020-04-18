@@ -26,13 +26,13 @@ function Total() {
         fetchData()
     }, [])
 
-    const {positive, recovered, death} = total
+    const {positive, recovered, death, hospitalized, totalTestResults, inIcuCurrently, lastModified} = total
 
     return (
         
         <div className="site-card-border-less-wrapper">
         <Title>Covid-19 Stats (USA)</Title>
-        <Title level={4}>Updated Daily</Title>
+        <Title level={4}>Updated: {lastModified}</Title>
     <Row gutter={[16, 16]}>
       <Col xs={24} sm={24} md={8} lg={8} xl={8}>
         <Card title="Confirmed" bordered={false} hoverable={true} headStyle={{color: 'blue'}} loading={cardLoading}>
@@ -47,6 +47,23 @@ function Total() {
       <Col xs={24} sm={24} md={8} lg={8} xl={8}>
         <Card title="Recovered" bordered={false} hoverable={true} headStyle={{color: 'green'}} loading={cardLoading}>
         <Statistic value={recovered} />
+        </Card>
+      </Col>
+    </Row>
+    <Row gutter={[16, 16]}>
+      <Col xs={24} sm={24} md={8} lg={8} xl={8}>
+        <Card title="Hospitalized" bordered={false} hoverable={true} headStyle={{color: 'orange'}} loading={cardLoading}>
+        <Statistic value={hospitalized} />
+        </Card>
+      </Col>
+      <Col xs={24} sm={24} md={8} lg={8} xl={8}>
+        <Card title="Intensive Care" bordered={false} hoverable={true} headStyle={{color: 'purple'}} loading={cardLoading}>
+        <Statistic value={inIcuCurrently} />
+        </Card>
+      </Col>
+      <Col xs={24} sm={24} md={8} lg={8} xl={8}>
+        <Card title="Total Test Results" bordered={false} hoverable={true} headStyle={{color: 'tomato'}} loading={cardLoading}>
+        <Statistic value={totalTestResults} />
         </Card>
       </Col>
     </Row>
